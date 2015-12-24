@@ -1,0 +1,11 @@
+<h1>Submit Polling Question Below</h1>
+
+<form action="/new/poll" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+  <div>
+    <input type="text" name="question[name]">
+    <input type="submit">
+  </div>
+</form>
+
+<!-- add notice here that your question has been submitted -->

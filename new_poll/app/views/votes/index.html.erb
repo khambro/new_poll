@@ -1,0 +1,25 @@
+<div class= "container">
+
+
+  <h1>Welcome to Pollasaurus!</h1>
+  <h2>Click on a poll below to vote and see the results</h2>
+
+  <div class="polls">
+    <% @questions.each do |q| %>
+    <ul>
+      <li><a href= "question/<%= q.id %>"><%= q.name %></a></li>
+    </ul>
+    <% end %>
+
+  </div>
+
+
+  <!-- <h3>Yes: <%= @trues %></h3>
+  <h3>No <%= @falses %><h3> -->
+
+  <!-- <ul>
+    <% @votes.each do |n| %>
+      <li><%= n.answer %></li>
+    <% end %>
+  </ul> -->
+</div>
