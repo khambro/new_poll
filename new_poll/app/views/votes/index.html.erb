@@ -4,7 +4,7 @@
   <h1>Welcome to Pollasaurus!</h1>
   <h2>Click on a poll below to vote and see the results</h2>
 
-  <div class="polls">
+  <div class="polls col-md-10">
     <% @questions.each do |q| %>
     <ul>
       <li><a href= "question/<%= q.id %>"><%= q.name %></a></li>
@@ -13,8 +13,10 @@
 
   </div>
 
+<div class="col-md-10">
+  <h3>Or create your own poll <a href="/new/poll">here</a></h3>
+</div>
 
-<h3>Or create your own poll <a href="/new/poll">here</a></h3>
 
   <!-- <h3>Yes: <%= @trues %></h3>
   <h3>No <%= @falses %><h3> -->

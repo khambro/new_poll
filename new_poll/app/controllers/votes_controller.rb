@@ -13,6 +13,7 @@ class VotesController <ApplicationController
     @question = Question.find(params[:id])
     @vote = Vote.new(vote_params)
     @vote.question_id = @question.id
+    @vote.response = (params[:vote][:response])
     if @vote.save
       redirect_to show_path
     else
@@ -34,7 +35,7 @@ class VotesController <ApplicationController
   private
 
   def vote_params
-    params.require(:vote).permit(:answer, :id)
+    params.require(:vote).permit(:response, :answer, :id)
   end
 
 

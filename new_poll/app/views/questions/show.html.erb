@@ -6,9 +6,17 @@
   <input type="hidden" name="vote[question_id]" value="<%= @question.id  %>" />
   <div>
     <h4><%= @question.name %></h4>
-    <input type="radio" id="answer_true"  name="vote[answer]" value="true"/>Yes
-    <input type="radio" id="answer_false" name="vote[answer]" value="false"/>No
-    <input type="submit">
+    <% if @question.is_boolean == true %>
+      <input type="radio" id="answer_true"  name="vote[answer]" value="true"/>Yes
+      <input type="radio" id="answer_false" name="vote[answer]" value="false"/>No
+      <input type="submit">
+    <% else %>
+      <input type="radio" name="vote[response]" value="<%= @question.response %>"/><%= @question.response %>
+      <input type="radio" name="vote[response]" value="<%= @question.response2 %>"/><%= @question.response2 %>
+      <input type="radio" name="vote[response]" value="<%= @question.response3 %>"/><%= @question.response3 %>
+      <input type="radio" name="vote[response]" value="<%= @question.response4 %>"/><%= @question.response4 %>
+      <input type="submit">
+    <% end %>
   </div>
 </form>
 
@@ -21,6 +29,13 @@
 <button class="show">Show me the results</button>
 
 <div class="results" style="display: none">
-  <h3>Yes: <%= @trues %> <br><%= (@trues.to_f / @votes.size.to_f)*100 %>%</h3>
-  <h3>No: <%= @falses %><br><%= (@falses.to_f / @votes.size.to_f)*100 %>%</h3>
+  <% if @question.is_boolean == true %>
+    <h3>Yes: <%= @trues %> <br><%= (@trues.to_f / @votes.size.to_f)*100 %>%</h3>
+    <h3>No: <%= @falses %><br><%= (@falses.to_f / @votes.size.to_f)*100 %>%</h3>
+  <% else %>
+    <% @votes.each do |n| %>
+      <%= n.response %>
+    <% end %>
+  <% end %>
+
 </div>

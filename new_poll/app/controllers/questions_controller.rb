@@ -22,7 +22,7 @@ class QuestionsController <ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:name)
+    params.require(:question).permit(:name, :is_boolean, :response, :response2, :response3, :response4)
   end
 
 
