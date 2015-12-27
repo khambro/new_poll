@@ -15,8 +15,23 @@ class QuestionsController <ApplicationController
     @votes = Vote.where(question_id: (params[:id]))
     @trues = @votes.where(answer: true).size
     @falses = @votes.where(answer: false).size
+    @responses = Vote.where(response: @question.response)
+    @responses2 = Vote.where(response: @question.response2)
+    @responses3 = Vote.where(response: @question.response3)
+    @responses4 = Vote.where(response: @question.response4)
+
   end
 
+  def show_result
+    @question = Question.find(params[:id])
+    @votes = Vote.where(question_id: (params[:id]))
+    @trues = @votes.where(answer: true).size
+    @falses = @votes.where(answer: false).size
+    @responses = Vote.where(response: @question.response)
+    @responses2 = Vote.where(response: @question.response2)
+    @responses3 = Vote.where(response: @question.response3)
+    @responses4 = Vote.where(response: @question.response4)
+  end
 
 
   private

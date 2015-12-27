@@ -1,0 +1,32 @@
+
+<h2><%= @question.name %></h2>
+
+
+
+
+<div class="results">
+  <% if @question.is_boolean == true %>
+    <h3>Yes: <%= @trues %> <br><%= (@trues.to_f / @votes.size.to_f)*100 %>%</h3>
+    <h3>No: <%= @falses %><br><%= (@falses.to_f / @votes.size.to_f)*100 %>%</h3>
+  <% else %>
+    <div class="count">
+      <%= @question.response %> <%= @responses.count %>
+    </div>
+    <div class="count">
+      <%= @question.response2 %> <%= @responses2.count %>
+    </div>
+    <div class="count">
+      <%= @question.response3 %> <%= @responses3.count %>
+    </div>
+    <div class="count">
+      <%= @question.response4 %> <%= @responses4.count %>
+    </div>
+  <% end %>
+
+
+
+
+
+
+
+</div>

@@ -15,7 +15,7 @@ class VotesController <ApplicationController
     @vote.question_id = @question.id
     @vote.response = (params[:vote][:response])
     if @vote.save
-      redirect_to show_path
+      redirect_to "/question/#{@question.id}/results"
     else
       puts @vote.errors
     end
