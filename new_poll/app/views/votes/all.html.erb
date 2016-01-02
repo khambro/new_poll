@@ -1,0 +1,32 @@
+
+<div class="results">
+<% @votes.each do |v| %>
+  <%= v.response %>
+<% end %>
+
+
+
+<% @questions.each do |q| %>
+  <h2><%= q.name %></h2>
+  <% if q.is_boolean == true %>
+    <h4>Yes:  <%= q.votes.where(answer: true).size %> <br><%= (@trues.to_f / @votes.size.to_f)*100 %>%</h4>
+    <h4>No: <%= q.votes.where(answer: false).size %><br><%= (@falses.to_f / @votes.size.to_f)*100 %>%</h4>
+  <% else %>
+    <div class="count">
+      <h4><%= q.response %>: <%= q.votes.where(response: q.response).size %></h4>
+    </div>
+    <div class="count">
+      <h4><%= q.response4 %>: <%= q.votes.where(response: q.response4).size %></h4>
+    </div>
+    <div class="count">
+      <h4><%= q.response3 %>: <%= q.votes.where(response: q.response3).size %></h4>
+    </div>
+    <div class="count">
+      <h4><%= q.response4 %>: <%= q.votes.where(response: q.response4).size %></h4>
+    </div>
+  <% end %>
+<% end %>
+
+
+
+</div>

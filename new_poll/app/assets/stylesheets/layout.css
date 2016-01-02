@@ -1,3 +1,20 @@
-/*body {
-  background-image: url("stars.gif");
-}*/
+body {
+  background-image: url("pattern.png");
+}
+
+.jumbotron {
+  background-image: url("poller.jpg");
+  height: 325px;
+  text-align: center;
+  color: white;
+}
+.square {
+  /*display: block;*/
+  margin: 0 auto;
+  /*padding-left: 100px;*/
+  margin: 0;
+  height: 500px;
+  width: 700px;
+  background-color: #ffffff;
+
+}

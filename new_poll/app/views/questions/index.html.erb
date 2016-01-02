@@ -3,14 +3,31 @@
 <form action="/new/poll" method="POST">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
   <div>
-    <input type="text" name="question[name]">
-    Yes/no question?<input type="checkbox" name="question[is_boolean]">
-    If not yes/no, enter polling choices below:
-    Option 1<input type="text" name="question[response]">
-    Option 2<input type="text" name="question[response2]">
-    Option 3<input type="text" name="question[response3]">
-    Option 4<input type="text" name="question[response4]">
-    <input type="submit">
+    <div>
+      <input type="text" name="question[name]" placeholder="polling question">
+    </div>
+    <div>
+      Yes/no question?<input type="checkbox" name="question[is_boolean]">
+    </div>
+    <div>
+      If not yes/no, enter polling choices below:
+    </div>
+    <div>
+      <input type="text" name="question[response]" placeholder="option 1">
+    </div>
+    <div>
+      <input type="text" name="question[response2]" placeholder="option 2">
+    </div>
+    <div>
+      <input type="text" name="question[response3]" placeholder="option 3">
+    </div>
+    <div>
+      <input type="text" name="question[response4]" placeholder="option 4">
+    </div>
+    <div>
+      <input type="submit">
+    </div>
+
   </div>
 </form>
 

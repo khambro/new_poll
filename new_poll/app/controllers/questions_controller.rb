@@ -7,7 +7,7 @@ class QuestionsController <ApplicationController
   def create
     @question = Question.new(question_params)
     @question.save
-    redirect_to "/new/poll"
+    redirect_to "/new/poll", notice: "Your question has been submitted!"
   end
 
   def show

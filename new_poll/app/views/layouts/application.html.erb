@@ -5,8 +5,51 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link rel="icon" href="icon.ico" type="image/x-icon" />
 </head>
 <body>
+
+  <nav class= "navbar navbar">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- <%= link_to (image_tag "poll.jpg"), "/", class:"logo" %></h3> -->
+      <%= link_to "Poller Bear", root_path, class: "navbar-brand" %>
+      <button class ="navbar-toggle collapsed" data-toggle="collapse" data-target=".menu-wrapper">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+
+      </button>
+
+    </div>
+    <div class="menu-wrapper collapse navbar-collapse">
+
+      <div class="navbar-menu navbar-right">
+
+        <ul class="nav navbar-nav">
+          <!-- <li><%= link_to "Home", root_path %></li> -->
+          <li><%= link_to "New Poll", "/new/poll" %></li>
+          <li><%= link_to "All Poll Results", "/results" %></li>
+
+        </ul>
+      </div>
+
+
+        <div class="navbar-right">
+
+
+        </div>
+
+    </div>
+  </div>
+</nav>
+
+<% if flash.key?(:notice) %>
+  <div class = 'alert alert-info'>
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
 <div class="container">
 <%= yield %>
 </div>

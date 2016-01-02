@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   get "/question/:id", to: "questions#show", as: :show
   post "/question/:id/votes", to: "votes#create"
   get "/question/:id/results", to: "questions#show_result"
-  post "/question/:id/results", to: "questions#show_result"
+  get "/results", to: "votes#all", as: :all_results
+
 
 
 
