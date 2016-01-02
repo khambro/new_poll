@@ -1,49 +1,48 @@
-<h2>Care to place a vote?</h2>
+<div class="box">
+  <h2>Care to place a vote?</h2>
+  <form action= "/question/<%= @question.id %>/votes" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+    <input type="hidden" name="vote[question_id]" value="<%= @question.id  %>" />
+    <div>
+      <h4><%= @question.name %></h4>
+      <% if @question.is_boolean == true %>
+        <input type="radio" id="answer_true"  name="vote[answer]" value="true"/>Yes
+        <input type="radio" id="answer_false" name="vote[answer]" value="false"/>No
+        <input type="submit">
+      <% else %>
+        <input type="radio" name="vote[response]" value="<%= @question.response %>"/><%= @question.response %>
+        <input type="radio" name="vote[response]" value="<%= @question.response2 %>"/><%= @question.response2 %>
+        <input type="radio" name="vote[response]" value="<%= @question.response3 %>"/><%= @question.response3 %>
+        <input type="radio" name="vote[response]" value="<%= @question.response4 %>"/><%= @question.response4 %>
+        <input type="submit" class="btn-success">
+      <% end %>
+    </div>
+  </form>
+</div>
+
+<div class="box">
 
 
-<form action= "/question/<%= @question.id %>/votes" method="POST">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-  <input type="hidden" name="vote[question_id]" value="<%= @question.id  %>" />
-  <div>
-    <h4><%= @question.name %></h4>
+  <h3>See voting results without placing a vote yourself... if that's your style.</h3>
+  <button class="show btn-warning">Show me the results</button>
+
+  <div class="results" style="display: none">
     <% if @question.is_boolean == true %>
-      <input type="radio" id="answer_true"  name="vote[answer]" value="true"/>Yes
-      <input type="radio" id="answer_false" name="vote[answer]" value="false"/>No
-      <input type="submit">
+      <h3>Yes: <%= @trues %> <br><%= (@trues.to_f / @votes.size.to_f)*100 %>%</h3>
+      <h3>No: <%= @falses %><br><%= (@falses.to_f / @votes.size.to_f)*100 %>%</h3>
     <% else %>
-      <input type="radio" name="vote[response]" value="<%= @question.response %>"/><%= @question.response %>
-      <input type="radio" name="vote[response]" value="<%= @question.response2 %>"/><%= @question.response2 %>
-      <input type="radio" name="vote[response]" value="<%= @question.response3 %>"/><%= @question.response3 %>
-      <input type="radio" name="vote[response]" value="<%= @question.response4 %>"/><%= @question.response4 %>
-      <input type="submit">
+      <div class="count">
+        <%= @question.response %> <%= @responses.count %>
+      </div>
+      <div class="count">
+        <%= @question.response2 %> <%= @responses2.count %>
+      </div>
+      <div class="count">
+        <%= @question.response3 %> <%= @responses3.count %>
+      </div>
+      <div class="count">
+        <%= @question.response4 %> <%= @responses4.count %>
+      </div>
     <% end %>
   </div>
-</form>
-
-
-
-<h3>See voting results without placing a vote yourself... if that's your style.</h3>
-<button class="show">Show me the results</button>
-
-<div class="results" style="display: none">
-  <% if @question.is_boolean == true %>
-    <h3>Yes: <%= @trues %> <br><%= (@trues.to_f / @votes.size.to_f)*100 %>%</h3>
-    <h3>No: <%= @falses %><br><%= (@falses.to_f / @votes.size.to_f)*100 %>%</h3>
-  <% else %>
-    <div class="count">
-      <%= @question.response %> <%= @responses.count %>
-    </div>
-    <div class="count">
-      <%= @question.response2 %> <%= @responses2.count %>
-    </div>
-    <div class="count">
-      <%= @question.response3 %> <%= @responses3.count %>
-    </div>
-    <div class="count">
-      <%= @question.response4 %> <%= @responses4.count %>
-    </div>
-  <% end %>
-
-
-
 </div>

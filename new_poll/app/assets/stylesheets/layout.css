@@ -8,13 +8,18 @@ body {
   text-align: center;
   color: white;
 }
+
 .square {
-  /*display: block;*/
   margin: 0 auto;
-  /*padding-left: 100px;*/
-  margin: 0;
   height: 500px;
   width: 700px;
   background-color: #ffffff;
+}
 
+.box {
+  margin: 0 auto;
+  height: auto;
+  width: 550px;
+  background-color: #ffffff;
+  text-align: center;
 }
