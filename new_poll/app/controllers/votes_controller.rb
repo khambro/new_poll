@@ -9,6 +9,7 @@ class VotesController <ApplicationController
   end
 
 
+
   def create
     @question = Question.find(params[:id])
     @vote = Vote.new(vote_params)
@@ -23,23 +24,14 @@ class VotesController <ApplicationController
 
   def all
     @questions = Question.all
-    # @question = Question.find(:id)
     @votes = Vote.where(question_id: (params[:id]))
-    @trues = @votes.where(answer: true).size
-    @falses = @votes.where(answer: false).size
-    # @responses = Vote.where(response: @question.response)
-    # @responses2 = Vote.where(response: @question.response2)
-    # @responses3 = Vote.where(response: @question.response3)
-    # @responses4 = Vote.where(response: @question.response4)
-
   end
 
-
-
-
-#   @user = User.new(params.require(:user).permit(:name))
-# @user.save
-# redirect_to root_path
+  def display
+    @questions = Question.all
+    p = self.votes.where(response: self.response).size.to_f/(self.votes.size.to_f)*100
+    p
+  end
 
 
 

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   post "/question/:id/votes", to: "votes#create"
   get "/question/:id/results", to: "questions#show_result"
   get "/results", to: "votes#all", as: :all_results
-
+  
 
 
 

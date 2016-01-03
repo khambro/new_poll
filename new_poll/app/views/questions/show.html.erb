@@ -8,7 +8,7 @@
       <% if @question.is_boolean == true %>
         <input type="radio" id="answer_true"  name="vote[answer]" value="true"/>Yes
         <input type="radio" id="answer_false" name="vote[answer]" value="false"/>No
-        <input type="submit">
+        <input type="submit" class="btn-success">
       <% else %>
         <input type="radio" name="vote[response]" value="<%= @question.response %>"/><%= @question.response %>
         <input type="radio" name="vote[response]" value="<%= @question.response2 %>"/><%= @question.response2 %>
