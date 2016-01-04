@@ -1,9 +1,9 @@
 body {
-  background-image: url("pattern.png");
+  background-image: image-url("pattern.png");
 }
 
 .jumbotron {
-  background-image: url("poller.jpg");
+  background-image: image-url("poller.jpg");
   height: 325px;
   text-align: center;
   color: white;
