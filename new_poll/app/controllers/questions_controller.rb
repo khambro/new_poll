@@ -6,6 +6,7 @@ class QuestionsController <ApplicationController
 
   def create
     @question = Question.new(question_params)
+    # @user = User.new(params[:user][:tidbit])
     @question.save
     redirect_to "/new/poll", notice: "Your question has been submitted!"
   end
