@@ -16,7 +16,7 @@
       <h4><%= q.response %>: <%= q.votes.where(response: q.response).size %> || <%= (q.votes.where(response: q.response).size.to_f / q.votes.size.to_f)*100 %>%</h4>
     </div>
     <div class="count">
-      <h4><%= q.response4 %>: <%= q.votes.where(response: q.response2).size %> || <%= (q.votes.where(response: q.response2).size.to_f / q.votes.size.to_f)*100 %>%</h4>
+      <h4><%= q.response2 %>: <%= q.votes.where(response: q.response2).size %> || <%= (q.votes.where(response: q.response2).size.to_f / q.votes.size.to_f)*100 %>%</h4>
     </div>
     <div class="count">
       <h4><%= q.response3 %>: <%= q.votes.where(response: q.response3).size %> || <%= (q.votes.where(response: q.response3).size.to_f / q.votes.size.to_f)*100 %>%</h4>
