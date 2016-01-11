@@ -1,45 +1,45 @@
-<div class="box">
+  <div class=form-style-6>
 
 
-  <h1>Submit Polling Question Below</h1>
 
-  <form action="/new/poll" method="POST">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-    <div>
-      <div>
-        <input type="text" name="question[name]" placeholder="polling question">
-      </div>
-      <div>
-        Yes/no question?<input type="checkbox" name="question[is_boolean]">
-      </div>
-      <div>
-        If not yes/no, enter polling choices below:
-      </div>
-      <div>
-        <input type="text" name="question[response]" placeholder="option 1">
-        <input type="url" name="image[remote_image_file_url]" placeholder="image 1 url">
-      </div>
-      <div>
-        <input type="text" name="question[response2]" placeholder="option 2">
-        <input type="url" name="image[remote_image_file_two_url]" placeholder="image 2 url">
-      </div>
-      <div>
-        <input type="text" name="question[response3]" placeholder="option 3">
-        <input type="url" name="image[remote_image_file_three_url]" placeholder="image 3 url">
-      </div>
-      <div>
-        <input type="text" name="question[response4]" placeholder="option 4">
-        <input type="url" name="image[remote_image_file_four_url]" placeholder="image 4 url">
-      </div>
-      Tell me something about yourself! (optional)
-      <div>
-        <input type="text" name="user[tidbit]" placeholder="user tidbit">
-      </div>
-      <div>
-        <input type="submit" class="btn-success">
-      </div>
+    <h1>Submit Polling Question Below</h1>
 
-    </div>
-  </form>
+    <form action="/new/poll" method="POST">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+      <div>
+        <div>
+          <input type="text" name="question[name]" placeholder="polling question">
+        </div>
+        <div>
+          Yes/no question?<input type="checkbox" name="question[is_boolean]">
+        </div>
+        <div>
+          If not yes/no, enter polling choices below:
+        </div>
+        <div>
+          <input type="text" name="question[response]" placeholder="option 1">
+          <input type="url" name="image[remote_image_file_url]" placeholder="image 1 url">
+        </div>
+        <div>
+          <input type="text" name="question[response2]" placeholder="option 2">
+          <input type="url" name="image[remote_image_file_two_url]" placeholder="image 2 url">
+        </div>
+        <div>
+          <input type="text" name="question[response3]" placeholder="option 3">
+          <input type="url" name="image[remote_image_file_three_url]" placeholder="image 3 url">
+        </div>
+        <div>
+          <input type="text" name="question[response4]" placeholder="option 4">
+          <input type="url" name="image[remote_image_file_four_url]" placeholder="image 4 url">
+        </div>
+        Tell me something about yourself! (optional)
+        <div>
+          <input type="text" name="user[tidbit]" placeholder="user tidbit">
+        </div>
+        <div>
+          <input type="submit" class="btn-success">
+        </div>
 
-</div>
+      </div>
+    </form>
+  </div>
