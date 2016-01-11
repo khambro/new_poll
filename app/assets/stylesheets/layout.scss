@@ -18,8 +18,32 @@ body {
 
 .box {
   margin: 0 auto;
+  margin-bottom: 50px;
   height: auto;
   width: 550px;
   background-color: #ffffff;
   text-align: center;
+}
+
+.box .answer {
+  text-align: left;
+  padding-left: 200px;
+  padding-bottom: 15px;
+}
+
+.box .btn-success {
+  display: inline-block;
+  float: left;
+  margin-left: 200px;
+}
+
+.box .btn-warning {
+  display: inline-block;
+  float: left;
+  margin-left: 150px;
+}
+
+.results .count {
+  display: block;
+
 }

@@ -10,18 +10,25 @@
         <input type="radio" id="answer_false" name="vote[answer]" value="false"/>No
         <input type="submit" class="btn-success">
       <% else %>
-        <input type="radio" name="vote[response]" value="<%= @question.response %>"/><%= @question.response %>
-        <input type="radio" name="vote[response]" value="<%= @question.response2 %>"/><%= @question.response2 %>
-        <input type="radio" name="vote[response]" value="<%= @question.response3 %>"/><%= @question.response3 %>
-        <input type="radio" name="vote[response]" value="<%= @question.response4 %>"/><%= @question.response4 %>
-        <input type="submit" class="btn-success">
+      <div class="answer">
+        <%= image_tag @image1.url %><input type="radio" name="vote[response]" value="<%= @question.response %>"/><%= @question.response %>
+      </div>
+      <div class="answer">
+        <%= image_tag @image2.url %><input type="radio" name="vote[response]" value="<%= @question.response2 %>"/><%= @question.response2 %>
+      </div>
+      <div class="answer">
+        <%= image_tag @image3.url %><input type="radio" name="vote[response]" value="<%= @question.response3 %>"/><%= @question.response3 %>
+      </div>
+      <div class="answer">
+        <%= image_tag @image4.url %><input type="radio" name="vote[response]" value="<%= @question.response4 %>"/><%= @question.response4 %>
+      </div>
+        <input type="submit", value="Vote", id="button", class="btn-success">
       <% end %>
     </div>
   </form>
 </div>
 
 <div class="box">
-
 
   <h3>See voting results without placing a vote yourself... if that's your style.</h3>
   <button class="show btn-warning">Show me the results</button>

@@ -4,11 +4,20 @@ class QuestionsController <ApplicationController
     @questions = Question.all
   end
 
+
   def create
     @question = Question.new(question_params)
-    # @user = User.new(params[:user][:tidbit])
-    @question.save
-    redirect_to "/new/poll", notice: "Your question has been submitted!"
+    if @question.save
+      @user = User.new()
+      @user.question_id = @question.id
+      @user.save
+      @image = Image.new(params.require(:image).permit!)
+      @image.image_file = params[:image_file]
+      @image.question_id = @question.id
+      @image.save
+
+      redirect_to "/new/poll", notice: "Your question has been submitted!"
+    end
   end
 
   def show
@@ -20,6 +29,11 @@ class QuestionsController <ApplicationController
     @responses2 = Vote.where(response: @question.response2)
     @responses3 = Vote.where(response: @question.response3)
     @responses4 = Vote.where(response: @question.response4)
+    @images = Image.all
+    @image1 = @images.find_by(question_id: @question.id).image_file
+    @image2 = @images.find_by(question_id: @question.id).image_file_two
+    @image3 = @images.find_by(question_id: @question.id).image_file_three
+    @image4 = @images.find_by(question_id: @question.id).image_file_four
 
   end
 
@@ -39,6 +53,14 @@ class QuestionsController <ApplicationController
 
   def question_params
     params.require(:question).permit(:name, :is_boolean, :response, :response2, :response3, :response4)
+  end
+
+  # def image_params
+  #   params.require(:image).permit(:image_file, :image_file_two, :image_file_three, :image_file_four)
+  # end
+
+  def user_params
+    params.require(:user).permit(:question_id, :tidbit)
   end
 
 
