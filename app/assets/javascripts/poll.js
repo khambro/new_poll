@@ -4,7 +4,6 @@ $(document).ready(function() {
       $(".results").show();
     });
 
-
   $("#checkbox").change(function() {
         $(".options").toggle();
 

@@ -16,7 +16,6 @@ class QuestionsController <ApplicationController
       @image.question_id = @question.id
       @image.save
     
-
       redirect_to "/new/poll", notice: "Your question has been submitted!"
     end
   end

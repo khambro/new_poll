@@ -54,7 +54,7 @@ body {
 
 .form-style-6{
     font: 95% Arial, Helvetica, sans-serif;
-    max-width: 400px;
+    max-width: 500px;
     margin: 10px auto;
     padding: 16px;
     background: #F7F7F7;
@@ -62,7 +62,7 @@ body {
 .form-style-6 h1{
     background: #43D1AF;
     padding: 20px 0;
-    font-size: 140%;
+    font-size: 20s0%;
     font-weight: 300;
     text-align: center;
     color: #fff;
@@ -166,4 +166,12 @@ body {
 
 .form-style-6 .answer{
   font-size: 18px;
+}
+
+.answer #radio {
+  display: inline-block;
+}
+
+.answer {
+  margin: 10px;
 }

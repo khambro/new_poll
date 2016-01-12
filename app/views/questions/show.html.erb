@@ -1,11 +1,10 @@
 
   <div class=form-style-6>
-    <h2>Care to place a vote?</h2>
     <form action= "/question/<%= @question.id %>/votes" method="POST">
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
       <input type="hidden" name="vote[question_id]" value="<%= @question.id  %>" />
       <div>
-        <h4><%= @question.name %></h4>
+        <h1><%= @question.name %></h1>
         <% if @question.is_boolean == true %>
           <input type="radio" id="answer_true"  name="vote[answer]" value="true"/>Yes
           <input type="radio" id="answer_false" name="vote[answer]" value="false"/>No
@@ -15,25 +14,25 @@
           <%if @image1 != nil %>
           <%= image_tag @image1.url(:square) %>
           <%end%>
-          <input type="radio" name="vote[response]" value="<%= @question.response %>"/><%= @question.response %>
+          <input type="radio" name="vote[response]" id="radio" value="<%= @question.response %>"/><%= @question.response %>
         </div>
         <div class="answer">
           <%if @image1 != nil %>
             <%= image_tag @image2.url(:square) %>
           <%end%>
-          <input type="radio" name="vote[response]" value="<%= @question.response2 %>"/><%= @question.response2 %>
+          <input type="radio" name="vote[response]" id="radio" value="<%= @question.response2 %>"/><%= @question.response2 %>
         </div>
         <div class="answer">
           <%if @image3  != nil %>
             <%= image_tag @image3.url(:square) %>
           <%end%>
-          <input type="radio" name="vote[response]" value="<%= @question.response3 %>"/><%= @question.response3 %>
+          <input type="radio" name="vote[response]" id="radio" value="<%= @question.response3 %>"/><%= @question.response3 %>
         </div>
         <div class="answer">
           <%if @image4  != nil%>
           <%= image_tag @image4.url(:square) %>
           <%end%>
-          <input type="radio" name="vote[response]" value="<%= @question.response4 %>"/><%= @question.response4 %>
+          <input type="radio" name="vote[response]" id="radio" value="<%= @question.response4 %>"/><%= @question.response4 %>
         </div>
           <input type="submit", value="Vote", id="button", class="btn-success">
         <% end %>
