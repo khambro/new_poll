@@ -29,12 +29,13 @@ class QuestionsController <ApplicationController
     @responses2 = Vote.where(response: @question.response2)
     @responses3 = Vote.where(response: @question.response3)
     @responses4 = Vote.where(response: @question.response4)
-    @images = Image.all
-    @image1 = @images.find_by(question_id: @question.id).image_file
-    @image2 = @images.find_by(question_id: @question.id).image_file_two
-    @image3 = @images.find_by(question_id: @question.id).image_file_three
-    @image4 = @images.find_by(question_id: @question.id).image_file_four
-
+    @images = Image.where(question_id: @question.id)
+    @images.each do |i|
+      @image1 = i.image_file
+      @image2 = i.image_file_two
+      @image3 = i.image_file_three
+      @image4 = i.image_file_four
+    end
   end
 
   def show_result
