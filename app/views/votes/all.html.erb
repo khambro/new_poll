@@ -10,7 +10,9 @@
 
 <% @questions.each do |q| %>
   <% if q.votes.count > 0 %>
-    <h2><%= q.name %></h2>
+
+
+    <h2><a href= "question/<%= q.id %>"><%= q.name %></a></h2>
     <% if q.is_boolean == true %>
       <h4>Yes:  <%= q.votes.where(answer: true).size %> <br><%= ((q.votes.where(answer: true).size.to_f/ q.votes.size.to_f)*100) %>%</h4>
       <h4>No: <%= q.votes.where(answer: false).size %><br><%= (q.votes.where(answer: false).size.to_f / q.votes.size.to_f)*100 %>%</h4>
