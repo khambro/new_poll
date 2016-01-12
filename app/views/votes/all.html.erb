@@ -1,4 +1,6 @@
 
+<div class= "box">
+
 <div class="results">
 <% @votes.each do |v| %>
   <%= v.response %>
@@ -7,26 +9,28 @@
 
 
 <% @questions.each do |q| %>
-  <h2><%= q.name %></h2>
-  <% if q.is_boolean == true %>
-    <h4>Yes:  <%= q.votes.where(answer: true).size %> <br><%= ((q.votes.where(answer: true).size.to_f/ q.votes.size.to_f)*100) %>%</h4>
-    <h4>No: <%= q.votes.where(answer: false).size %><br><%= (q.votes.where(answer: false).size.to_f / q.votes.size.to_f)*100 %>%</h4>
-  <% else %>
-    <div class="count">
-      <h4><%= q.response %>: <%= q.votes.where(response: q.response).size %> | <%= (q.votes.where(response: q.response).size.to_f / q.votes.size.to_f)*100 %>%</h4>
-    </div>
-    <div class="count">
-      <h4><%= q.response2 %>: <%= q.votes.where(response: q.response2).size %> | <%= (q.votes.where(response: q.response2).size.to_f / q.votes.size.to_f)*100 %>%</h4>
-    </div>
-    <div class="count">
-      <h4><%= q.response3 %>: <%= q.votes.where(response: q.response3).size %> | <%= (q.votes.where(response: q.response3).size.to_f / q.votes.size.to_f)*100 %>%</h4>
-    </div>
-    <div class="count">
-      <h4><%= q.response4 %>: <%= q.votes.where(response: q.response4).size %> | <%= (q.votes.where(response: q.response4).size.to_f / q.votes.size.to_f)*100 %>%</h4>
-    </div>
+  <% if q.votes.count > 0 %>
+    <h2><%= q.name %></h2>
+    <% if q.is_boolean == true %>
+      <h4>Yes:  <%= q.votes.where(answer: true).size %> <br><%= ((q.votes.where(answer: true).size.to_f/ q.votes.size.to_f)*100) %>%</h4>
+      <h4>No: <%= q.votes.where(answer: false).size %><br><%= (q.votes.where(answer: false).size.to_f / q.votes.size.to_f)*100 %>%</h4>
+    <% else %>
+      <div class="count">
+        <h4><%= q.response %>: <%= q.votes.where(response: q.response).size %> | <%= (q.votes.where(response: q.response).size.to_f / q.votes.size.to_f)*100 %>%</h4>
+      </div>
+      <div class="count">
+        <h4><%= q.response2 %>: <%= q.votes.where(response: q.response2).size %> | <%= (q.votes.where(response: q.response2).size.to_f / q.votes.size.to_f)*100 %>%</h4>
+      </div>
+      <div class="count">
+        <h4><%= q.response3 %>: <%= q.votes.where(response: q.response3).size %> | <%= (q.votes.where(response: q.response3).size.to_f / q.votes.size.to_f)*100 %>%</h4>
+      </div>
+      <div class="count">
+        <h4><%= q.response4 %>: <%= q.votes.where(response: q.response4).size %> | <%= (q.votes.where(response: q.response4).size.to_f / q.votes.size.to_f)*100 %>%</h4>
+      </div>
+    <% end %>
   <% end %>
 <% end %>
 
-
+</div>
 
 </div>

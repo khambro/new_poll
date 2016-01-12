@@ -12,25 +12,25 @@
           <input type="submit" class="btn-success">
         <% else %>
         <div class="answer">
-          <%if @image1 %>
+          <%if @image1 != nil %>
           <%= image_tag @image1.url(:square) %>
           <%end%>
           <input type="radio" name="vote[response]" value="<%= @question.response %>"/><%= @question.response %>
         </div>
         <div class="answer">
-          <%if @image1 %>
-          <%= image_tag @image2.url(:square) %>
+          <%if @image1 != nil %>
+            <%= image_tag @image2.url(:square) %>
           <%end%>
           <input type="radio" name="vote[response]" value="<%= @question.response2 %>"/><%= @question.response2 %>
         </div>
         <div class="answer">
-          <%if @image3 %>
-          <%= image_tag @image3.url(:square) %>
+          <%if @image3  != nil %>
+            <%= image_tag @image3.url(:square) %>
           <%end%>
           <input type="radio" name="vote[response]" value="<%= @question.response3 %>"/><%= @question.response3 %>
         </div>
         <div class="answer">
-          <%if @image4 %>
+          <%if @image4  != nil%>
           <%= image_tag @image4.url(:square) %>
           <%end%>
           <input type="radio" name="vote[response]" value="<%= @question.response4 %>"/><%= @question.response4 %>
@@ -41,10 +41,10 @@
     </form>
   </div>
 
-<div class="box">
+<div class="form-style-6">
 
-  <h3>See voting results without placing a vote yourself... if that's your style.</h3>
-  <button class="show btn-warning">Show me the results</button>
+  <h4>See voting results without placing a vote yourself... if that's your style.</h4>
+  <button class="show btn-danger">Show me the results</button>
 
   <div class="results" style="display: none">
     <% if @question.is_boolean == true %>

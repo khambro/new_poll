@@ -21,8 +21,7 @@ body {
   margin-bottom: 50px;
   height: auto;
   width: 550px;
-  background-color: #ffffff;
-  text-align: center;
+  text-align: left;
 }
 
 .box .answer {
@@ -43,10 +42,15 @@ body {
   margin-left: 150px;
 }
 
-.results .count {
-  display: block;
-
+.box  {
+  display: inline-block;
+  float: left;
 }
+
+.results h2 {
+  text-align: left;
+}
+
 
 .form-style-6{
     font: 95% Arial, Helvetica, sans-serif;
@@ -133,7 +137,11 @@ body {
 }
 
 .container h2 {
-  text-align: center;
+  text-align: left;
+}
+
+.container h4 {
+  text-align: left;
 }
 
 .background {
@@ -141,6 +149,21 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
-
   background: url("montage.jpg");
+}
+
+.results .count {
+  font-size: 18px;
+}
+
+.form-style-6 h4{
+  text-align: center;
+}
+
+.form-style-6 button{
+  margin: auto;
+}
+
+.form-style-6 .answer{
+  font-size: 18px;
 }

@@ -12,9 +12,10 @@ class QuestionsController <ApplicationController
       @user.question_id = @question.id
       @user.save
       @image = Image.new(params.require(:image).permit!)
-      @image.image_file = params[:image_file]
+      # @image.image_file = params[:image_file]
       @image.question_id = @question.id
       @image.save
+    
 
       redirect_to "/new/poll", notice: "Your question has been submitted!"
     end
