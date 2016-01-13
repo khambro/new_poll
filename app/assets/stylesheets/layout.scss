@@ -60,7 +60,7 @@ body {
     background: #F7F7F7;
 }
 .form-style-6 h1{
-    background: #12319f;
+    background: #0b133d;
     padding: 20px 0;
     font-size: 200%;
     font-weight: 300;
@@ -118,7 +118,7 @@ body {
     -moz-box-sizing: border-box;
     width: 100%;
     padding: 3%;
-    background: #12319f;
+    background: #0b133d;
     border-bottom: 2px solid #30C29E;
     border-top-style: none;
     border-right-style: none;
@@ -168,10 +168,24 @@ body {
   font-size: 18px;
 }
 
-.answer #radio {
-  display: inline-block;
-}
 
 .answer {
   margin: 10px;
+}
+
+.answer label {
+  width: 100%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.answer input {
+  display: none;
+}
+
+.answer input:checked + label {
+  border: 2px solid #319ba3;
+  background-color: rgba(30, 242, 230, 0.8);
+
 }

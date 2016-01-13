@@ -6,33 +6,58 @@
       <div>
         <h1><%= @question.name %></h1>
         <% if @question.is_boolean == true %>
-          <input type="radio" id="answer_true"  name="vote[answer]" value="true"/>Yes
-          <input type="radio" id="answer_false" name="vote[answer]" value="false"/>No
+          <div class="answer">
+          <input type="radio" id="answer_true"  name="vote[answer]" value="true"/>
+          <%= label_tag :answer_true do %>
+            Yes
+          <% end %>
+        </div>
+        <div class="answer">
+          <input type="radio" id="answer_false" name="vote[answer]" value="false">
+          <%= label_tag :answer_false do %>
+            No
+          <% end %>
+        </div>
           <input type="submit" class="btn-success">
         <% else %>
         <div class="answer">
-          <%if @image1 != nil %>
-          <%= image_tag @image1.url(:square) %>
-          <%end%>
-          <input type="radio" name="vote[response]" id="radio" value="<%= @question.response %>"/><%= @question.response %>
+          <input type="radio" name="vote[response]" id="response1" value="<%= @question.response %>"/>
+          <%= label_tag :response1 do %>
+
+            <%if @image1 %>
+            <%= image_tag @image1.url(:square) %>
+            <%end%>
+            <%= @question.response %>
+
+          <% end %>
         </div>
         <div class="answer">
-          <%if @image1 != nil %>
-            <%= image_tag @image2.url(:square) %>
+          <input type="radio" name="vote[response]" id="response2" value="<%= @question.response2 %>"/>
+          <%= label_tag :response2 do %>
+            <%if @image2 %>
+              <%= image_tag @image2.url(:square) %>
+            <%end%>
+            <%= @question.response2 %>
+
           <%end%>
-          <input type="radio" name="vote[response]" id="radio" value="<%= @question.response2 %>"/><%= @question.response2 %>
         </div>
         <div class="answer">
-          <%if @image3  != nil %>
-            <%= image_tag @image3.url(:square) %>
+          <input type="radio" name="vote[response]" id="response3" value="<%= @question.response3 %>"/>
+          <%= label_tag :response3 do %>
+            <%if @image3 %>
+              <%= image_tag @image3.url(:square) %>
+            <%end%>
+            <%= @question.response3 %>
           <%end%>
-          <input type="radio" name="vote[response]" id="radio" value="<%= @question.response3 %>"/><%= @question.response3 %>
         </div>
         <div class="answer">
-          <%if @image4  != nil%>
-          <%= image_tag @image4.url(:square) %>
+          <input type="radio" name="vote[response]" id="response4" value="<%= @question.response4 %>"/>
+          <%= label_tag :response4 do %>
+            <%if @image4 %>
+            <%= image_tag @image4.url(:square) %>
+            <%end%>
+            <%= @question.response4 %>
           <%end%>
-          <input type="radio" name="vote[response]" id="radio" value="<%= @question.response4 %>"/><%= @question.response4 %>
         </div>
           <input type="submit", value="Vote", id="button", class="btn-success">
         <% end %>
