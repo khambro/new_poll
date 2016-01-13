@@ -5,7 +5,6 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
-  <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0259/2151/files/nfl_u_sherman_1296x729_zps972e5b0f.jpg?17092788018188477046"/>
 </head>
 <body>
 
@@ -13,7 +12,7 @@
   <div class="container">
     <div class="navbar-header">
       <!-- <%= link_to (image_tag "poll.jpg"), "/", class:"logo" %></h3> -->
-      <%= link_to "Poller Bear", root_path, class: "navbar-brand" %>
+      <%= link_to "Poller Bear", root_path, class: "navbar-brand hvr-float-shadow" %>
       <button class ="navbar-toggle collapsed" data-toggle="collapse" data-target=".menu-wrapper">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -26,9 +25,9 @@
       <div class="navbar-menu navbar-right">
 
         <ul class="nav navbar-nav">
-          <li><%= link_to "New Poll", "/new/poll" %></li>
-          <li><%= link_to "All Poll Results", "/results" %></li>
-          <li><%= link_to "Contact", "mailto:khambro@gmail.com?subject=PollerBear"%></li>
+          <li><%= link_to "New Poll", "/new/poll", class:"hvr-float-shadow" %></li>
+          <li><%= link_to "All Poll Results", "/results", class:"hvr-float-shadow" %></li>
+          <li><%= link_to "Contact", "mailto:khambro@gmail.com?subject=PollerBear", class:"hvr-float-shadow"%></li>
           <!-- <div class = "icons">
           <a href= "mailto:khambro@gmail.com" class="hvr-float-shadow" ><i class="fa fa-envelope-square fa-lg"></i></a>
           <a href= "https://www.linkedin.com/pub/karen-hambro/a/94b/349" class="hvr-float-shadow" ><i class="fa fa-linkedin fa-lg"></i></a>
