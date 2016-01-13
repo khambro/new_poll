@@ -17,16 +17,24 @@
       <h4>No: <%= q.votes.where(answer: false).size %><br><%= q.percentage_for_boolean(false) %>%</h4>
     <% else %>
       <div class="count">
-        <h4><%= q.response %>: <%= q.votes.where(response: q.response).size %> | <%= q.percentage_for_responses(q.response).round %>%</h4>
+        <% if q.response.present? %>
+          <h4><%= q.response %>: <%= q.votes.where(response: q.response).size %> | <%= q.percentage_for_responses(q.response).round %>%</h4>
+        <% end %>
       </div>
       <div class="count">
-        <h4><%= q.response2 %>: <%= q.votes.where(response: q.response2).size %> | <%= q.percentage_for_responses(q.response2).round %>%</h4>
+        <% if q.response2.present? %>
+          <h4><%= q.response2 %>: <%= q.votes.where(response: q.response2).size %> | <%= q.percentage_for_responses(q.response2).round %>%</h4>
+        <% end %>
       </div>
       <div class="count">
-        <h4><%= q.response3 %>: <%= q.votes.where(response: q.response3).size %> | <%= q.percentage_for_responses(q.response3).round %>%</h4>
+        <% if q.response3.present? %>
+          <h4><%= q.response3 %>: <%= q.votes.where(response: q.response3).size %> | <%= q.percentage_for_responses(q.response3).round %>%</h4>
+        <% end %>
       </div>
       <div class="count">
-        <h4><%= q.response4 %>: <%= q.votes.where(response: q.response4).size %> | <%= q.percentage_for_responses(q.response4).round %>%</h4>
+        <% if q.response4.present? %>
+          <h4><%= q.response4 %>: <%= q.votes.where(response: q.response4).size %> | <%= q.percentage_for_responses(q.response4).round %>%</h4>
+        <% end %>
       </div>
     <% end %>
   <% end %>
