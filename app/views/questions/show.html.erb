@@ -76,16 +76,24 @@
       <h3>No: <%= @falses %><br><%= (@falses.to_f / @votes.size.to_f)*100 %>%</h3>
     <% else %>
       <div class="count">
-        <%= @question.response %>: <%= @responses.count %>
+        <% if @question.response.present? %>
+          <%= @question.response %>: <%= @responses.count %>
+        <% end %>  
       </div>
       <div class="count">
-        <%= @question.response2 %>: <%= @responses2.count %>
+        <% if @question.response2.present? %>
+          <%= @question.response2 %>: <%= @responses2.count %>
+        <% end %>
       </div>
       <div class="count">
-        <%= @question.response3 %>: <%= @responses3.count %>
+        <% if @question.response3.present? %>
+          <%= @question.response3 %>: <%= @responses3.count %>
+        <% end %>
       </div>
       <div class="count">
-        <%= @question.response4 %>: <%= @responses4.count %>
+        <% if @question.response4.present? %>
+          <%= @question.response4 %>: <%= @responses4.count %>
+        <% end %>
       </div>
     <% end %>
   </div>
