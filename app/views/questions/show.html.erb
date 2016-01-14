@@ -6,10 +6,10 @@
       <div>
         <h1><%= @question.name %></h1>
         <% if @question.is_boolean == true %>
-          <div class="answer">
-          <input type="radio" id="answer_true"  name="vote[answer]" value="true"/>
-          <%= label_tag :answer_true do %>
-            Yes
+        <div class="answer">
+            <input type="radio" id="answer_true"  name="vote[answer]" value="true"/>
+            <%= label_tag :answer_true do %>
+              Yes
           <% end %>
         </div>
         <div class="answer">
@@ -38,7 +38,6 @@
               <%= image_tag @image2.url(:square) %>
             <%end%>
             <%= @question.response2 %>
-
           <%end%>
         </div>
         <div class="answer">
@@ -78,7 +77,7 @@
       <div class="count">
         <% if @question.response.present? %>
           <%= @question.response %>: <%= @responses.count %>
-        <% end %>  
+        <% end %>
       </div>
       <div class="count">
         <% if @question.response2.present? %>
